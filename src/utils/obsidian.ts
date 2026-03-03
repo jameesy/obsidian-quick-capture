@@ -76,7 +76,7 @@ function createDailyNoteTemplate(date: string): string {
 }
 
 /**
- * Finds a section by header and appends text to it.
+ * Finds a section by header and appends text to the end (chronologically).
  * Supports both ## Heading and **Bold** section formats.
  * If section doesn't exist, creates it at the end.
  */
@@ -89,21 +89,26 @@ function appendToSection(content: string, text: string, sectionHeader: string): 
 
   // Try to match both markdown heading (## Section) and bold (**Section**)
   const patterns = [
-    // Markdown heading pattern (## Section)
-    new RegExp(`(#{1,6}\\s*${escapedHeader}\\s*\\n\\n?)((?:.*\\n)*?)(?=#{1,6}\\s|$)`, "i"),
-    // Bold pattern (**Section**)
-    new RegExp(`(\\*\\*${escapedHeader}\\*\\*\\s*\\n\\n)((?:- .*\\n)*)(- )?`, "i"),
+    // Markdown heading pattern (## Section) - captures everything until next heading or end
+    new RegExp(`(#{1,6}\\s*${escapedHeader}\\s*\\n)((?:.*\\n)*?)(?=\\n#{1,6}\\s|$)`, "is"),
+    // Bold pattern (**Section**) - captures everything until next section or end
+    new RegExp(`(\\*\\*${escapedHeader}\\*\\*\\s*\\n)((?:.*\\n)*?)(?=\\n\\*\\*|\\n#{1,6}\\s|$)`, "is"),
   ];
 
   for (const pattern of patterns) {
     if (pattern.test(content)) {
-      // Section found - append to it
-      return content.replace(pattern, `$1$2${text}\n\n$3`);
+      // Section found - append new text at the END of the section content
+      return content.replace(pattern, (match, header, sectionContent) => {
+        // Trim trailing whitespace from section content
+        const trimmedContent = sectionContent.trimEnd();
+        // Add new text at the end with proper spacing
+        return `${header}${trimmedContent}\n${text}\n\n`;
+      });
     }
   }
 
   // Section not found - create it at the end
-  return content.trim() + `\n\n${sectionHeader}\n\n${text}\n\n`;
+  return content.trim() + `\n\n${sectionHeader}\n${text}\n\n`;
 }
 
 /**

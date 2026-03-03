@@ -19,11 +19,7 @@ type ExtensionPreferences = {
   /** Section Header - Section to append notes to (e.g., ## Inbox, **Notes**). Leave empty to append to end of file. */
   "sectionHeader"?: string,
   /** Create Daily Note if Missing - Automatically create today's daily note if it doesn't exist */
-  "createNoteIfMissing": boolean,
-  /** Transcription Service - Service to use for speech-to-text */
-  "transcriptionService": "whisper" | "macos",
-  /** OpenAI API Key - API key for OpenAI Whisper transcription */
-  "openaiApiKey"?: string
+  "createNoteIfMissing": boolean
 }
 
 /** Preferences accessible in all the extension's commands */
@@ -32,14 +28,10 @@ declare type Preferences = ExtensionPreferences
 declare namespace Preferences {
   /** Preferences accessible in the `quick-note` command */
   export type QuickNote = ExtensionPreferences & {}
-  /** Preferences accessible in the `voice-capture` command */
-  export type VoiceCapture = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
   /** Arguments passed to the `quick-note` command */
   export type QuickNote = {}
-  /** Arguments passed to the `voice-capture` command */
-  export type VoiceCapture = {}
 }
 

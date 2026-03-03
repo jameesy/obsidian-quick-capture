@@ -14,13 +14,6 @@
       "subtitle": "Obsidian",
       "description": "Capture a quick thought to your daily note",
       "mode": "view"
-    },
-    {
-      "name": "voice-capture",
-      "title": "Voice Capture",
-      "subtitle": "Obsidian",
-      "description": "Capture a spoken thought to your daily note",
-      "mode": "view"
     }
   ],
   "preferences": [
@@ -75,31 +68,6 @@
       "description": "Automatically create today's daily note if it doesn't exist",
       "default": true,
       "label": "Create note automatically"
-    },
-    {
-      "name": "transcriptionService",
-      "type": "dropdown",
-      "required": false,
-      "title": "Transcription Service",
-      "description": "Service to use for speech-to-text",
-      "default": "whisper",
-      "data": [
-        {
-          "title": "OpenAI Whisper",
-          "value": "whisper"
-        },
-        {
-          "title": "macOS Dictation",
-          "value": "macos"
-        }
-      ]
-    },
-    {
-      "name": "openaiApiKey",
-      "type": "password",
-      "required": false,
-      "title": "OpenAI API Key",
-      "description": "API key for OpenAI Whisper transcription"
     }
   ],
   "dependencies": {

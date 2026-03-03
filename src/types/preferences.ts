@@ -5,6 +5,4 @@ export interface Preferences {
   timestampFormat: string;
   sectionHeader?: string;
   createNoteIfMissing?: boolean;
-  transcriptionService?: "whisper" | "macos";
-  openaiApiKey?: string;
 }

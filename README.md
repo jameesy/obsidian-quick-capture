@@ -4,12 +4,12 @@ A Raycast extension to quickly capture thoughts (written or spoken) directly to 
 
 ## Features
 
-- 📝 **Quick Note**: Instantly capture text thoughts to your daily note
-- 🎤 **Voice Capture**: Use macOS dictation to speak your thoughts
+- 📝 **Quick Capture**: Instantly capture text thoughts to your daily note
 - ⚡ **Fast**: Opens with a hotkey, saves with Cmd+S
 - 🎯 **Flexible**: Works with any note format - append to sections or end of file
 - 📅 **Smart**: Finds or creates today's note automatically
 - 🔧 **Configurable**: Customize paths, formats, and section headers
+- ⏱️ **Chronological**: Notes appear in order throughout the day
 
 ## Installation
 
