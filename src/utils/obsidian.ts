@@ -101,8 +101,8 @@ function appendToSection(content: string, text: string, sectionHeader: string): 
       return content.replace(pattern, (match, header, sectionContent) => {
         // Trim trailing whitespace from section content
         const trimmedContent = sectionContent.trimEnd();
-        // Add new text at the end with proper spacing
-        return `${header}${trimmedContent}\n${text}\n\n`;
+        // Add new text at the end with blank line spacing between entries
+        return `${header}${trimmedContent}\n\n${text}\n\n`;
       });
     }
   }
