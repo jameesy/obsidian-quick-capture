@@ -1,8 +1,8 @@
 # Obsidian Quick Capture
 
-A Raycast extension to quickly capture thoughts (written or spoken) directly to your Obsidian daily notes. **Works with any vault structure and note format** - from standard Daily Notes to custom Zettelkasten setups.
-
 <img width="2258" height="1404" alt="CleanShot 2026-03-03 at 10 55 10@2x" src="https://github.com/user-attachments/assets/0339f8df-1fa1-4bf0-9a3e-a528ca7edffe" />
+
+A Raycast extension to quickly capture thoughts (written or spoken) directly to your Obsidian daily notes. **Works with any vault structure and note format** - from standard Daily Notes to custom Zettelkasten setups.
 
 ## Features
 
